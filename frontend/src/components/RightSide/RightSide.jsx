@@ -5,7 +5,7 @@ import Noti from "../../img/noti.png";
 import Comment from "../../img/comment.png";
 import { UilSetting } from "@iconscout/react-unicons";
 import TrendCard from "../TrendCard/TrendCard";
-// import ShareModal from "../ShareModal/ShareModal";
+import ShareModal from "../ShareModal/ShareModal";
 
 const RightSide = () => {
   const [modalOpened, setModalOpened] = useState(false);
@@ -23,7 +23,7 @@ const RightSide = () => {
       <button className="button r-button" onClick={() => setModalOpened(true)}>
         Share
       </button>
-      {/* <ShareModal modalOpened={modalOpened} setModalOpened={setModalOpened} /> */}
+      <ShareModal modalOpened={modalOpened} setModalOpened={setModalOpened} />
     </div>
   );
 };
