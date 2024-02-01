@@ -8,6 +8,14 @@ module.exports.registerUser = async (req, res) => {
   const salt = await bcrypt.genSalt(10);
   const hashedPass = await bcrypt.hash(password, salt);
 
+  const controlExist = await UserModel.findOne({
+    username: username,
+  });
+
+  if (controlExist) {
+    res.status(403).json("There is already a user with that username");
+    return;
+  }
   const newUser = new UserModel({
     username,
     password: hashedPass,
