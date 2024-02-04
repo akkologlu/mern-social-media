@@ -6,6 +6,7 @@ const cors = require("cors");
 const AuthRoute = require("./Routes/AuthRoute");
 const UserRoute = require("./Routes/UserRoute");
 const PostRoute = require("./Routes/PostRoute");
+const UploadRoute = require("./Routes/UploadRoute");
 
 // Routes
 
@@ -31,3 +32,4 @@ mongoose
 app.use("/auth", AuthRoute);
 app.use("/user", UserRoute);
 app.use("/post", PostRoute);
+app.use("/upload", UploadRoute);
